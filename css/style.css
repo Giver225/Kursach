@@ -1,1 +1,105 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  color: #ffffff;
+}
+
+.first_block {
+  position: fixed;
+  height: 100%;
+  background: url(../img/bg.png) center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: block;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.bg_gradient {
+  position: relative;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), color-stop(40.63%, rgba(0, 0, 0, 0.33)), to(rgba(0, 0, 0, 0.9)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.33) 40.63%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.container {
+  max-width: 1410px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1422) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 991.98) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 767.98) {
+  .container {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+h1 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 78px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #BD232F;
+  border-radius: 30px;
+  display: inline-block;
+  padding: 32px 109px;
+  margin: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 617;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 121.875%;
+  color: white;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
+@media (min-width: 992px) {
+  .btn:hover {
+    background-color: #a71e2a;
+  }
+}
+
+.btn._fw {
+  width: 100%;
+}
