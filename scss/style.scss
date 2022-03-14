@@ -10,6 +10,7 @@ $fontFamily: "Montserrat";
 $minWidth: 320px;
 $maxWidth: 1920;
 $maxWidthContainer: 1410;
+$maxWidthContainer2: 1176;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
@@ -46,6 +47,10 @@ html,body{
     position: relative;
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.33) 40.63%, rgba(0, 0, 0, 0.9) 100%);
+    
+}
+.blur{
+    backdrop-filter: blur(20px);
 }
 .content{
     position: relative;
@@ -130,7 +135,7 @@ a{
     text-decoration: none;
 }
 .btn{
-    background-color: #BD232F;
+    
     border-radius: 30px;
     display: inline-block;
     padding: 1.2% 3%;
@@ -141,25 +146,25 @@ a{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 64px;
-    line-height: 78/64*100%;
     color: rgb(255, 255, 255);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: background-color 0.3s ease 0s;
-    
-    &:hover{
-        background-color: #a71e2a;
-    }
     }
     
 
 .start{
-    max-width: 666px;
+    background-color: #BD232F;
+    font-size: 64px;
+    line-height: 78/64*100%;
+    // max-width: 666px;
     max-height: 300px;
     position: absolute;
     left: 50%;
     bottom: 7%;
     transform: translate(-50%, 0);
+    &:hover{
+        background-color: #a71e2a;
+    }
 }
 
 .UpHeart{
@@ -178,3 +183,128 @@ a{
 
 
 
+
+// ************************************************************************
+
+// ВТОРАЯ СТРАНИЦА
+
+// ************************************************************************
+
+
+.container_questions{
+    height: 100%;
+    max-width: $maxWidthContainer2+px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 64px;
+    @media (max-width: 1422px ) {
+        .container_questions{
+            max-width: 750px;
+            font-size: 48px;
+        }
+        .welcome{
+            font-size: 48px;
+            // color: green;
+        }
+        .start{
+            font-size: 48px;
+            // color: green;
+        }
+    }
+    @media (max-width: 991px ) {
+        .container_questions{
+            max-width: 970px;
+            font-size: 32px;
+        }
+        .welcome{
+            font-size: 32px;
+            // color: green;
+        }
+        .start{
+            font-size: 32px;
+            // color: green;
+        }
+        
+    }
+    @media (max-width: 767px ) {
+        .container{
+            max-width: none;
+            font-size: 24px;
+            margin: 10px;
+        }
+        .welcome{
+            font-size: 24px;
+            // color: green;
+        }
+        .start{
+            font-size: 24px;
+            // color: green;
+        }
+        
+    }
+}
+
+
+
+.questions_text{
+    width: 100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 122%;
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    position: fixed;
+    
+    // margin-left: 10px;
+    // margin-right: 10px;
+    top: 25%;
+    left: 50%;
+    
+    transform: translate(-50%, 0);
+}
+.question_font{
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 122%;
+}
+.next{
+    background-color: #BD232F;
+    font-size: 24px;
+    line-height: 78/64*100%;
+    // max-width: 666px;
+    max-height: 300px;
+    // position: absolute;
+    // left: 50%;
+    // bottom: 7%;
+    // right: 0;
+    float: right;
+    // transform: translate(-50%, 0);
+    &:hover{
+        background-color: #a71e2a;
+    }
+}
+
+.prev{
+    background-color: #BD232F;
+    font-size: 24px;
+    line-height: 78/64*100%;
+    // max-width: 666px;
+    max-height: 300px;
+    // position: absolute;
+    // left: 10;
+    // bottom: 7%;
+    // left: 0;
+    // transform: translate(-50%, 0);
+    float: left;
+    &:hover{
+        background-color: #a71e2a;
+    }
+}
+.btn_row{
+    
+}
