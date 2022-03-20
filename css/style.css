@@ -285,7 +285,7 @@ a {
   margin-right: 10px;
 }
 
-.list {
+.answer li {
   background: #FF5D4A;
   border-radius: 14px;
   margin-top: 10px;
@@ -296,7 +296,7 @@ a {
   list-style-type: none;
 }
 
-.list:active {
+.answer li:active {
   outline: 4px solid #ffffff;
 }
 
