@@ -33,7 +33,9 @@ window.onload = function(){
                 result.push(event.target.dataset.v);
                 step++;
                 if(step >= quiz['questions'].length){
+                    sessionStorage.setItem('answers',result);
                     window.location.href = "/result.html";
+
                 }
                 console.log(result);
             }
