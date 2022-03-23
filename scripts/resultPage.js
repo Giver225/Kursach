@@ -1,26 +1,50 @@
-window.onload = function(){
+window.onload = function () {
     ans = sessionStorage.getItem('answers');
     res = {}
-    maxId = 0;
+    var maxId = 0;
     maxNum = 0;
     for (let i = 0; i < ans.length; i++) {
-        if(res[ans[i]]!=undefined){
+        if (res[ans[i]] != undefined && ans[i] != ',') {
             res[ans[i]]++;
-            if(res[ans[i]]>maxNum){
+            if (res[ans[i]] > maxNum) {
                 maxNum = res[ans[i]];
                 maxId = ans[i];
             }
-        }else{
-            res[ans[i]]=1;
+        } else {
+            res[ans[i]] = 1;
         }
-        
+
     }
+    console.log(ans);
+    console.log(res);
+
     fetch('JSON/places.json')
-    .then(response => response.json())
-    .then(function(places){
-        document.querySelector(".placeName").innerHTML = places[maxId]['name'];
-        document.querySelector(".placeDiscription").innerHTML = places[maxId]['discription'];
-        document.querySelector(".placeAdress").innerHTML = places[maxId]['adress'];
-    });
-    
+        .then(response => response.json())
+        .then(function (places) {
+            var cat = "comfy";
+            switch (Number(maxId)) {
+                case 0:
+                    cat = "comfy";
+                    break;
+                case 1:
+                    cat = "active";
+                    break;
+                case 2:
+                    cat = "regular";
+                    break;
+                case 3:
+                    cat = "unique";
+                    break;
+                default:
+                    cat = "def";
+                    break;
+            }
+            console.log(maxId);
+            console.log(cat);
+            document.querySelector(".placeName").innerHTML = places[cat][0]['name'];
+            document.querySelector(".placeDiscription").innerHTML = places[cat][0]['discription'];
+            document.querySelector(".placeAdress").innerHTML = places[cat][0]['adress'];
+            document.getElementById("placeImg").src = places[cat][0]['image'];
+        });
+
 }

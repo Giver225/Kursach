@@ -18,10 +18,10 @@ window.onload = function(){
             }else{
                 document.getElementById("prBtn").style.display = 'inline-block';
             }
-            document.querySelector(".question_font").innerHTML = quiz['questions'][questionNumber]['q'];
+            document.querySelector(".question_font").innerHTML = quiz[questionNumber]['q'];
             let answer = ''
-            for (let key in quiz['questions'][questionNumber]['ans']){
-                answer += `<li data-v=${key} class="answer-variant">${quiz['questions'][questionNumber]['ans'][key]}</li>`
+            for (let key in quiz[questionNumber]['ans']){
+                answer += `<li data-v=${key} class="answer-variant">${quiz[questionNumber]['ans'][key]}</li>`
             }
             document.querySelector(".answer").innerHTML = answer;
         }
@@ -29,10 +29,10 @@ window.onload = function(){
         document.onclick = function (event){
             
             event.stopPropagation();
-            if(event.target.classList.contains("answer-variant") && step < quiz['questions'].length ){
+            if(event.target.classList.contains("answer-variant") && step < quiz.length ){
                 result.push(event.target.dataset.v);
                 step++;
-                if(step >= quiz['questions'].length){
+                if(step >= quiz.length){
                     sessionStorage.setItem('answers',result);
                     window.location.href = "/result.html";
 
