@@ -3,17 +3,12 @@ window.onload = function(){
     let result = {};
     let step = 0;
 
-    console.log(quiz[0]['quest']);
-    
-    // db = openDatabase("ToDo", "0.1", "A list of to do items.", 200000);
-    // db.transaction(function(tx) {
-    //     tx.executeSql("SELECT COUNT(*) FROM ToDo", [], function (result) { alert('dsfsdf') }, function (tx, error) {
-    //     tx.executeSql("CREATE TABLE ToDo (id REAL UNIQUE, label TEXT, timestamp REAL)", [], null, null);
-    //     })});
-            
-    
-    // if(!db){alert("Failed to connect to database.");}
+    let resp = fetch("JSON/questions.json")
+    mydata = resp.json();
+    console.log(mydata);
 
+    console.log(quiz[0]['quest']);
+    // 
     function showQuestion(questionNumber){
         document.querySelector(".question_font").innerHTML = quiz[questionNumber]['quest'];
         let answer = ''
