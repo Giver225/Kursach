@@ -1,39 +1,60 @@
 window.onload = function(){
     
-    let result = {};
-    let step = 0;
+    
 
-    let resp = fetch("JSON/questions.json")
-    mydata = resp.json();
-    console.log(mydata);
+    
+    fetch('JSON/questions.json')
+    .then(response => response.json())
+    .then(function(quiz){
+        console.log(quiz);
 
-    console.log(quiz[0]['quest']);
-    // 
-    function showQuestion(questionNumber){
-        document.querySelector(".question_font").innerHTML = quiz[questionNumber]['quest'];
-        let answer = ''
-        for (let key in quiz[questionNumber]['ans']){
-            answer += `<li data-v=${key} class="answer-variant">${quiz[questionNumber]['ans'][key]}</li>`
-        }
-        document.querySelector(".answer").innerHTML = answer;
-    }
 
-    document.onclick = function (event){
-        event.stopPropagation();
-        if(event.target.classList.contains("answer-variant") && step < quiz.length ){
-            if (result[event.target.dataset.v] != undefined){
-                result[event.target.dataset.v]++;
+        let result = [];
+        let step = 0;
+
+        function showQuestion(questionNumber){
+            if(step == 0){
+                document.getElementById("prBtn").style.display = 'none';
             }else{
-                result[event.target.dataset.v] = 1;
+                document.getElementById("prBtn").style.display = 'inline-block';
             }
-            step++;
-            if(step == quiz.length){
-                // Load answer page here
+            document.querySelector(".question_font").innerHTML = quiz['questions'][questionNumber]['q'];
+            let answer = ''
+            for (let key in quiz['questions'][questionNumber]['ans']){
+                answer += `<li data-v=${key} class="answer-variant">${quiz['questions'][questionNumber]['ans'][key]}</li>`
             }
+            document.querySelector(".answer").innerHTML = answer;
+        }
+    
+        document.onclick = function (event){
+            
+            event.stopPropagation();
+            if(event.target.classList.contains("answer-variant") && step < quiz['questions'].length ){
+                result.push(event.target.dataset.v);
+                step++;
+                if(step >= quiz['questions'].length){
+                    window.location.href = "/result.html";
+                }
+                console.log(result);
+            }
+            if(event.target.classList.contains("prev") && step > 0 ){
+                step--;
+                result.pop();
+                console.log(result);
+            }
+            
+            
+            
+            
+            showQuestion(step)
         }
         
         showQuestion(step)
-    }
+    });
 
-    showQuestion(step)
+    
+    
+ 
+    
+    
 }
