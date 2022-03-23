@@ -21,6 +21,7 @@ window.onload = function () {
     fetch('JSON/places.json')
         .then(response => response.json())
         .then(function (places) {
+            const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
             var cat = "comfy";
             switch (Number(maxId)) {
                 case 0:
@@ -41,10 +42,11 @@ window.onload = function () {
             }
             console.log(maxId);
             console.log(cat);
-            document.querySelector(".placeName").innerHTML = places[cat][0]['name'];
-            document.querySelector(".placeDiscription").innerHTML = places[cat][0]['discription'];
-            document.querySelector(".placeAdress").innerHTML = places[cat][0]['adress'];
-            document.getElementById("placeImg").src = places[cat][0]['image'];
+            var pos = random(0,places[cat].length);
+            document.querySelector(".placeName").innerHTML = places[cat][pos]['name'];
+            document.querySelector(".placeDiscription").innerHTML = places[cat][pos]['discription'];
+            document.querySelector(".placeAdress").innerHTML = places[cat][pos]['adress'];
+            document.getElementById("placeImg").src = places[cat][pos]['image'];
         });
 
 }
