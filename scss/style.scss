@@ -69,11 +69,9 @@ html,body{
         }
         .welcome{
             font-size: 48px;
-            // color: green;
         }
         .start{
             font-size: 48px;
-            // color: green;
         }
         .again{
             font-size: 30px;
@@ -86,11 +84,9 @@ html,body{
         }
         .welcome{
             font-size: 32px;
-            // color: green;
         }
         .start{
             font-size: 32px;
-            // color: green;
         }
         
     }
@@ -102,11 +98,9 @@ html,body{
         }
         .welcome{
             font-size: 24px;
-            // color: green;
         }
         .start{
             font-size: 24px;
-            // color: green;
         }
         .placeDiscription,.placeAdress{
             font-size: 14px;
@@ -315,7 +309,7 @@ a{
 }
 .btn_row{
     position: relative;
-    top: 40%;
+    top: 20%;
     transform: translate(0, -50%);
     margin-left: 10px;
     margin-right: 10px;
@@ -372,7 +366,7 @@ h1,h2{
     border-radius: 20px;
     margin: 10px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-54%, 0);
 }
 .placeName{
     text-align: center;

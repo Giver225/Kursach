@@ -290,7 +290,7 @@ a {
 
 .btn_row {
   position: relative;
-  top: 40%;
+  top: 20%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   margin-left: 10px;
@@ -350,8 +350,8 @@ h1, h2 {
   border-radius: 20px;
   margin: 10px;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  -webkit-transform: translate(-54%, 0);
+          transform: translate(-54%, 0);
 }
 
 .placeName {
